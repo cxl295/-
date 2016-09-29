@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检测首字母大小写</title>
+
+    <script>
+        function checkCharType(charToCheck){
+            var returnCheck ="O";
+            var checkCode = charToCheck.charCodeAt(0);
+            //console.log(checkCode);
+            if(checkCode>="A".charCodeAt(0)&&checkCode<="Z".charCodeAt(0))
+            {
+                returnCheck="U";
+            }
+            else if(checkCode>="a".charCodeAt(0)&&checkCode<="z".charCodeAt(0))
+            {
+                returnCheck="L";
+            }
+            else if(checkCode>="0".charCodeAt(0)&&checkCode<="9".charCodeAt(0))
+            {
+                returnCheck="N";
+            }
+            return returnCheck;
+        }
+    </script>
+
+</head>
+<body>
+<script>
+    var myString = prompt("Enter text","1ello!");
+    var myString2 = new Array("a","b","c","d");
+    var myStringList = myString2.join("<br/>");
+    document.write(myStringList);
+
+    switch(checkCharType(myString))
+    {
+        case "U":
+            document.write("Upper Case!");
+            break;
+        case "L":
+            document.write("Lower Case!");
+            break;
+        case "N":
+            document.write("Number Case!");
+            break;
+        default:
+            document.write("Not num or char!")
+
+
+    }
+
+</script>
+
+</body>
+</html>
